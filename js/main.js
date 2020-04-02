@@ -46,7 +46,7 @@
  ***************************************************************************************/
 
  var evenOddInput = prompt('scegli tra pari e dispari');
- console.log('Hai scelto: ' + evenOddInput)
+ console.log('Hai scelto: ' + evenOddInput);
  var numberInput = parseInt(prompt('scegli un numero da 1 a 5'));
 
 // INVOCATION
@@ -59,11 +59,11 @@ console.log('Il numero scelto dal computer è: ' + cpuNumber);
 
 // sum
 
-var totalSum = sumNumber(numberInput, cpuNumber)
+var totalSum = sumNumber(numberInput, cpuNumber);
 console.log('la somma tra numero scelto dall\'utente e quello scelto dal computer è: ' + totalSum)
 
 // We determine if the sum of the two numbers is even or odd
-var oddFunction = odd(evenOddInput)
+var oddFunction = odd(totalSum);
 
 if ( evenOddInput === 'pari' &&  oddFunction == 'odd' ) {
     console.log('Complimenti hai vinto, la somma tra i due numeri è pari');
@@ -96,8 +96,8 @@ function sumNumber (num1, num2) {
 }
 
 // even and odd function
-function odd (totalSum) {
-    if ( totalSum % 2 === 0 ) {
+function odd (word) {
+    if ( word % 2 === 0 ) {
         return 'odd';
     }
     return 'even';
