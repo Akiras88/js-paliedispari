@@ -45,9 +45,20 @@
  * 5- We declare who won
  ***************************************************************************************/
 
- var evenOddInput = prompt('scegli tra pari e dispari');
- console.log('Hai scelto: ' + evenOddInput);
- var numberInput = parseInt(prompt('scegli un numero da 1 a 5'));
+var evenOddInput = prompt('scegli tra pari e dispari').toLowerCase();
+
+//  VALIDATION
+while ( evenOddInput !==  'pari' && evenOddInput!==  'dispari' ) {
+    evenOddInput = prompt('Prego, scegli tra pari e dispari').toLowerCase();
+}
+console.log('Hai scelto: ' + evenOddInput);
+
+var numberInput = parseInt(prompt('scegli un numero da 1 a 5'));
+
+//  VALIDATION
+while ( (numberInput < 1 || numberInput > 5) || isNaN(numberInput) ) {
+    numberInput = parseInt(prompt('Prego, scegli un numero da 1 a 5'));
+}
 
 // INVOCATION
 
@@ -55,6 +66,8 @@
 
 var cpuNumber = getRandomNumber (1,5);
 console.log('Il numero scelto da te è: ' + numberInput);
+
+
 console.log('Il numero scelto dal computer è: ' + cpuNumber);
 
 // sum
@@ -63,13 +76,13 @@ var totalSum = sumNumber(numberInput, cpuNumber);
 console.log('la somma tra numero scelto dall\'utente e quello scelto dal computer è: ' + totalSum)
 
 // We determine if the sum of the two numbers is even or odd
-var oddFunction = odd(totalSum);
+var evenFunction = even(totalSum);
 
-if ( evenOddInput === 'pari' &&  oddFunction == true ) {
+if ( evenOddInput === 'pari' &&  evenFunction == true ) {
     console.log('Complimenti hai vinto, la somma tra i due numeri è pari');
-} else if ( evenOddInput === 'pari' &&  oddFunction == false ) {
+} else if ( evenOddInput === 'pari' &&  evenFunction == false ) {
     console.log('Hai perso, la somma tra i due numeri è dispari');
-} else if ( evenOddInput === 'dispari' &&  oddFunction == true ) {
+} else if ( evenOddInput === 'dispari' &&  evenFunction == true ) {
     console.log('hai perso, la somma dei tra i due numeri è pari');
 } else  {
     console.log('Complimenti hai vinto, la somma dei tra i due numeri è dispari');
@@ -96,7 +109,7 @@ function sumNumber (num1, num2) {
 }
 
 // even and odd function
-function odd (word) {
+function even (word) {
     if ( word % 2 === 0 ) {
         return true;
     }
