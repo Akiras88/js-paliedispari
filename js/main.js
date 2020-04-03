@@ -6,13 +6,13 @@
  ************************************************************************/
 
 // VARIABLES
-// var word = prompt('Inserisci una parola per verificare se è palindroma');
+// var word = prompt('Inserisci una parola per verificare se è palindroma').trim().toLowerCase();
 
 // INVOCATION
 // var wordReverse = reverseWord(word);
 // 
-// console.log(word.toLowerCase());
-// console.log(wordReverse.toLowerCase());
+// console.log(word);
+// console.log(wordReverse);
 // 
 // check if the word is palindrome
 // if ( word == wordReverse ) {
@@ -65,11 +65,11 @@ console.log('la somma tra numero scelto dall\'utente e quello scelto dal compute
 // We determine if the sum of the two numbers is even or odd
 var oddFunction = odd(totalSum);
 
-if ( evenOddInput === 'pari' &&  oddFunction == 'odd' ) {
+if ( evenOddInput === 'pari' &&  oddFunction == true ) {
     console.log('Complimenti hai vinto, la somma tra i due numeri è pari');
-} else if ( evenOddInput === 'pari' &&  oddFunction == 'even' ) {
+} else if ( evenOddInput === 'pari' &&  oddFunction == false ) {
     console.log('Hai perso, la somma tra i due numeri è dispari');
-} else if ( evenOddInput === 'dispari' &&  oddFunction == 'odd' ) {
+} else if ( evenOddInput === 'dispari' &&  oddFunction == true ) {
     console.log('hai perso, la somma dei tra i due numeri è pari');
 } else  {
     console.log('Complimenti hai vinto, la somma dei tra i due numeri è dispari');
@@ -85,8 +85,8 @@ if ( evenOddInput === 'pari' &&  oddFunction == 'odd' ) {
 
 // random number function
 function getRandomNumber (min, max) {
-    var round = Math.floor(Math.random() * (max - min + 1)) + min;
-    return round;
+    
+    return Math.floor( Math.random() * (max - min + 1) ) + min;
 }
 
 // sum function
@@ -98,7 +98,7 @@ function sumNumber (num1, num2) {
 // even and odd function
 function odd (word) {
     if ( word % 2 === 0 ) {
-        return 'odd';
+        return true;
     }
-    return 'even';
+    return false;
 }
